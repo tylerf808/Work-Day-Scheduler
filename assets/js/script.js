@@ -93,13 +93,16 @@ function checkTime(){
 
 //Function to save text input into local storage
 function saveText(){
-    
+    var elId = document.querySelector(".saveBtn").ELEMENT_NODE.id;
+    console.log(elId);
 }
 
 //Init function that runs when the page is opened
 function init() {
     checkTime();
-    document.querySelector(".saveBtn").forEach(addEventListener('click',saveText));
+     var elVar = document.getElementsByTagName("button");
+     var elId = elVar[0].id;
+     console.log(elId);
 }
 
 init();

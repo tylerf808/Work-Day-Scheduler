@@ -108,42 +108,49 @@ function saveText(event){
     switch(elId){
         case "9btn":
             inputTxt = document.getElementById('9').value;
-            
+            storeTxt(inputTxt, elId);
             break;
         case "10btn":
             inputTxt = document.getElementById('10').value;
-            
+            storeTxt(inputTxt, elId);
             break;
         case "11btn":
             inputTxt = document.getElementById('11').value;
-            
+            storeTxt(inputTxt, elId);
             break;
         case "12btn":
             inputTxt = document.getElementById('12').value;
-            
+            storeTxt(inputTxt, elId);
             break;
         case "1btn":
             inputTxt = document.getElementById('1').value;
-            
+            storeTxt(inputTxt, elId);
             break;
         case "2btn":
             inputTxt = document.getElementById('2').value;
-            
+            storeTxt(inputTxt, elId);
             break;
         case "3btn":
             inputTxt = document.getElementById('3').value;
-            
+            storeTxt(inputTxt, elId);
             break;
         case "4btn":
             inputTxt = document.getElementById('4').value;
-            
+            storeTxt(inputTxt, elId);
             break;
         case "5btn":
             inputTxt = document.getElementById('5').value;
-            
+            storeTxt(inputTxt, elId);
             break;
     }
 
+}
+
+//Function to store the text to local storage
+function storeTxt(txt, idForKey){
+    var id = idForKey;
+    var text = txt;
+    localStorage.setItem(id, text);
 }
 
 //Function to add event listeners to the buttons

@@ -1,5 +1,4 @@
 var dayDisplay = document.getElementById("currentDay");
-
 dayDisplay.innerHTML = moment().format('MMMM Do YYYY');
 
 //Function that checks the time and applies appropriate colors to the timeblocks
@@ -92,9 +91,15 @@ function checkTime(){
     
 }
 
+//Function to save text input into local storage
+function saveText(){
+    
+}
+
 //Init function that runs when the page is opened
 function init() {
     checkTime();
+    document.querySelector(".saveBtn").forEach(addEventListener('click',saveText));
 }
 
 init();

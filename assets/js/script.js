@@ -6,6 +6,8 @@ dayDisplay.innerHTML = moment().format('MMMM Do YYYY');
 var time, timeParsed;
 //Variable to hold input text
 var inputTxt;
+//Array that hold all the buttons
+var inputArray = document.querySelectorAll('.col-10');
 
 //Function that checks the time and applies appropriate colors to the timeblocks
 function checkTime(){
@@ -17,84 +19,84 @@ function checkTime(){
 function fillInRows(){
     //Check if timeblock has passed and change to grey if it has
     if (timeParsed >= 9){
-        document.getElementById("9").classList.add("past");
+        document.getElementById("0").classList.add("past");
     }
     if (timeParsed >= 10){
-        document.getElementById("10").classList.add("past");
-    }
-    if (timeParsed >= 11){
-        document.getElementById("11").classList.add("past");
-    }
-    if (timeParsed >= 12){
-        document.getElementById("12").classList.add("past");
-    }
-    if (timeParsed >= 13){
         document.getElementById("1").classList.add("past");
     }
-    if (timeParsed >= 14){
+    if (timeParsed >= 11){
         document.getElementById("2").classList.add("past");
     }
-    if (timeParsed >= 15){
+    if (timeParsed >= 12){
         document.getElementById("3").classList.add("past");
     }
-    if (timeParsed >= 16){
+    if (timeParsed >= 13){
         document.getElementById("4").classList.add("past");
+    }
+    if (timeParsed >= 14){
+        document.getElementById("5").classList.add("past");
+    }
+    if (timeParsed >= 15){
+        document.getElementById("6").classList.add("past");
+    }
+    if (timeParsed >= 16){
+        document.getElementById("7").classList.add("past");
     }
 
     //Check if it's the current timeblock and change to red
     if (timeParsed == 9){
-        document.getElementById("9").classList.add("present");
+        document.getElementById("0").classList.add("present");
     }
     if (timeParsed == 10){
-        document.getElementById("10").classList.add("present");
-    }
-    if (timeParsed == 11){
-        document.getElementById("11").classList.add("present");
-    }
-    if (timeParsed == 12){
-        document.getElementById("12").classList.add("present");
-    }
-    if (timeParsed == 13){
         document.getElementById("1").classList.add("present");
     }
-    if (timeParsed == 14){
+    if (timeParsed == 11){
         document.getElementById("2").classList.add("present");
     }
-    if (timeParsed == 15){
+    if (timeParsed == 12){
         document.getElementById("3").classList.add("present");
     }
-    if (timeParsed == 16){
+    if (timeParsed == 13){
         document.getElementById("4").classList.add("present");
     }
-    if (timeParsed == 17){
+    if (timeParsed == 14){
         document.getElementById("5").classList.add("present");
+    }
+    if (timeParsed == 15){
+        document.getElementById("6").classList.add("present");
+    }
+    if (timeParsed == 16){
+        document.getElementById("7").classList.add("present");
+    }
+    if (timeParsed == 17){
+        document.getElementById("8").classList.add("present");
     }
     
 
     //Changes future blocks to green
     if (timeParsed < 9){
-        document.getElementById("9").classList.add("future");
+        document.getElementById("0").classList.add("future");
     }
     if (timeParsed < 10){
-        document.getElementById("10").classList.add("future");
-    }
-    if (timeParsed < 11){
-        document.getElementById("11").classList.add("future");
-    }
-    if (timeParsed < 12){
-        document.getElementById("12").classList.add("future");
-    }
-    if (timeParsed < 13){
         document.getElementById("1").classList.add("future");
     }
-    if (timeParsed < 14){
+    if (timeParsed < 11){
         document.getElementById("2").classList.add("future");
     }
-    if (timeParsed < 15){
+    if (timeParsed < 12){
         document.getElementById("3").classList.add("future");
     }
-    if (timeParsed < 16){
+    if (timeParsed < 13){
         document.getElementById("4").classList.add("future");
+    }
+    if (timeParsed < 14){
+        document.getElementById("5").classList.add("future");
+    }
+    if (timeParsed < 15){
+        document.getElementById("6").classList.add("future");
+    }
+    if (timeParsed < 16){
+        document.getElementById("7").classList.add("future");
     }
     
 }
@@ -102,45 +104,46 @@ function fillInRows(){
 //Function to save text input into local storage
 function saveText(event){
     //Var that hold the button clicked id
-    var elId = event.target.id;
+    var elIdTemp = event.target.id;
+    var elId = elIdTemp.replace('btn','');
 
     //Switch statement that matches the input box to the target id
     switch(elId){
-        case "9btn":
-            inputTxt = document.getElementById('9').value;
-            storeTxt(inputTxt, elId);
+        case "9":
+            inputTxt = document.getElementById('0').value;
+            storeTxt(inputTxt, 0);
             break;
-        case "10btn":
-            inputTxt = document.getElementById('10').value;
-            storeTxt(inputTxt, elId);
-            break;
-        case "11btn":
-            inputTxt = document.getElementById('11').value;
-            storeTxt(inputTxt, elId);
-            break;
-        case "12btn":
-            inputTxt = document.getElementById('12').value;
-            storeTxt(inputTxt, elId);
-            break;
-        case "1btn":
+        case "10":
             inputTxt = document.getElementById('1').value;
-            storeTxt(inputTxt, elId);
+            storeTxt(inputTxt, 1);
             break;
-        case "2btn":
+        case "11":
             inputTxt = document.getElementById('2').value;
-            storeTxt(inputTxt, elId);
+            storeTxt(inputTxt, 2);
             break;
-        case "3btn":
+        case "12":
             inputTxt = document.getElementById('3').value;
-            storeTxt(inputTxt, elId);
+            storeTxt(inputTxt, 3);
             break;
-        case "4btn":
+        case "1":
             inputTxt = document.getElementById('4').value;
-            storeTxt(inputTxt, elId);
+            storeTxt(inputTxt, 4);
             break;
-        case "5btn":
+        case "2":
             inputTxt = document.getElementById('5').value;
-            storeTxt(inputTxt, elId);
+            storeTxt(inputTxt, 5);
+            break;
+        case "3":
+            inputTxt = document.getElementById('6').value;
+            storeTxt(inputTxt, 6);
+            break;
+        case "4":
+            inputTxt = document.getElementById('7').value;
+            storeTxt(inputTxt, 7);
+            break;
+        case "5":
+            inputTxt = document.getElementById('8').value;
+            storeTxt(inputTxt, 8);
             break;
     }
 
@@ -153,11 +156,17 @@ function storeTxt(txt, idForKey){
     localStorage.setItem(id, text);
 }
 
-//Function to add event listeners to the buttons
+//Function to add saved text and event listeners to the buttons
 function loadBtns(){
+    //Add buttons
     document.querySelectorAll('.saveBtn').forEach(item => {
         item.addEventListener('click', saveText);
     });
+
+    //Add text
+    document.querySelectorAll(".col-10").forEach(item => {
+        item.value = localStorage.getItem(item.id);
+    })
 }
 
 //Init function that runs when the page is opened

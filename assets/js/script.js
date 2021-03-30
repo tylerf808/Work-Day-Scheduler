@@ -1,12 +1,18 @@
+//Create an element var and make it display the current date
 var dayDisplay = document.getElementById("currentDay");
 dayDisplay.innerHTML = moment().format('MMMM Do YYYY');
 
+//Variable that holds current hour
+var time, timeParsed;
+
 //Function that checks the time and applies appropriate colors to the timeblocks
 function checkTime(){
-    //Variable that holds current hour
-    var time = moment().format('k');
-    var timeParsed = parseInt(time);
-    
+    //Stores the time as a string and parsed int
+    time = moment().format('k');
+    timeParsed = parseInt(time);
+}
+
+function fillInRows(){
     //Check if timeblock has passed and change to grey if it has
     if (timeParsed >= 9){
         document.getElementById("9").classList.add("past");
@@ -94,16 +100,20 @@ function checkTime(){
 //Function to save text input into local storage
 function saveText(event){
     var elId = event.target.id;
-    console.log(elId);
+    
+}
+
+//Function to add event listeners to the buttons
+function loadBtns(){
+    var buttonArray = document.querySelectorAll('.saveBtn').forEach(item => {
+        item.addEventListener('click', saveText);
+    });
 }
 
 //Init function that runs when the page is opened
 function init() {
     checkTime();
-    var buttonArray = document.querySelectorAll('.saveBtn').forEach(item => {
-        item.addEventListener('click', saveText);
-    });
-
+    loadBtns();
 }
 
 init();

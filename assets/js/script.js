@@ -92,17 +92,18 @@ function checkTime(){
 }
 
 //Function to save text input into local storage
-function saveText(){
-    var elId = document.querySelector(".saveBtn").ELEMENT_NODE.id;
+function saveText(event){
+    var elId = event.target.id;
     console.log(elId);
 }
 
 //Init function that runs when the page is opened
 function init() {
     checkTime();
-     var elVar = document.getElementsByTagName("button");
-     var elId = elVar[0].id;
-     console.log(elId);
+    var buttonArray = document.querySelectorAll('.saveBtn').forEach(item => {
+        item.addEventListener('click', saveText);
+    });
+
 }
 
 init();

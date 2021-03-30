@@ -3,7 +3,7 @@ Project: Word Day Scheduler
 
 Overview: This website allows the user to store hourly plans in an intuitive user interface.
 
-![Full Page](./Images/Full-Page.PNG)
+![Full Page](./assets/Images/Full-Page.PNG)
 
 Features: 
     - Row layout with each row being an hour timeblock

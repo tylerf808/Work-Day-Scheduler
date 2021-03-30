@@ -2,8 +2,10 @@
 var dayDisplay = document.getElementById("currentDay");
 dayDisplay.innerHTML = moment().format('MMMM Do YYYY');
 
-//Variable that holds current hour
+//Variable that holds current hour in string and int
 var time, timeParsed;
+//Variable to hold input text
+var inputTxt;
 
 //Function that checks the time and applies appropriate colors to the timeblocks
 function checkTime(){
@@ -99,13 +101,54 @@ function fillInRows(){
 
 //Function to save text input into local storage
 function saveText(event){
+    //Var that hold the button clicked id
     var elId = event.target.id;
-    
+
+    //Switch statement that matches the input box to the target id
+    switch(elId){
+        case "9btn":
+            inputTxt = document.getElementById('9').value;
+            
+            break;
+        case "10btn":
+            inputTxt = document.getElementById('10').value;
+            
+            break;
+        case "11btn":
+            inputTxt = document.getElementById('11').value;
+            
+            break;
+        case "12btn":
+            inputTxt = document.getElementById('12').value;
+            
+            break;
+        case "1btn":
+            inputTxt = document.getElementById('1').value;
+            
+            break;
+        case "2btn":
+            inputTxt = document.getElementById('2').value;
+            
+            break;
+        case "3btn":
+            inputTxt = document.getElementById('3').value;
+            
+            break;
+        case "4btn":
+            inputTxt = document.getElementById('4').value;
+            
+            break;
+        case "5btn":
+            inputTxt = document.getElementById('5').value;
+            
+            break;
+    }
+
 }
 
 //Function to add event listeners to the buttons
 function loadBtns(){
-    var buttonArray = document.querySelectorAll('.saveBtn').forEach(item => {
+    document.querySelectorAll('.saveBtn').forEach(item => {
         item.addEventListener('click', saveText);
     });
 }
@@ -113,6 +156,7 @@ function loadBtns(){
 //Init function that runs when the page is opened
 function init() {
     checkTime();
+    fillInRows();
     loadBtns();
 }
 

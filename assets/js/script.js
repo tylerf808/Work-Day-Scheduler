@@ -6,8 +6,6 @@ dayDisplay.innerHTML = moment().format('MMMM Do YYYY');
 var time, timeParsed;
 //Variable to hold input text
 var inputTxt;
-//Array that hold all the buttons
-var inputArray = document.querySelectorAll('.col-10');
 
 //Function that checks the time and applies appropriate colors to the timeblocks
 function checkTime(){

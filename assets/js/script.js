@@ -59,6 +59,10 @@ function checkTime(){
     if (timeParsed == 16){
         document.getElementById("4").classList.add("present");
     }
+    if (timeParsed == 17){
+        document.getElementById("5").classList.add("present");
+    }
+    
 
     //Changes future blocks to green
     if (timeParsed < 9){
@@ -89,4 +93,8 @@ function checkTime(){
 }
 
 //Init function that runs when the page is opened
-checkTime();
+function init() {
+    checkTime();
+}
+
+init();
